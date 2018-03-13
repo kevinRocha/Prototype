@@ -5,7 +5,7 @@
  */
 package Creador;
 
-import Modelo.Cell;
+import Modelo.Celula;
 
 /**
  *
@@ -13,18 +13,14 @@ import Modelo.Cell;
  */
 public class Clone {
     
-    private Cell celula;
+    private Celula celula;
 
     public Clone(){
         
-        celula = new Cell();
-        String[] colores = {"Red","Blue","Yellow","Black","White","Green"};
-        
-        celula.setColor(colores[(int) (Math.random() * 6)]);
-        celula.setVida((int) (Math.random() * 50) + 25);
+        celula = new Celula("White",25);
     }
     
-    public Cell retrieveCell(){
+    public Celula retrieveCell(){
         return celula.clone();
     }
 }

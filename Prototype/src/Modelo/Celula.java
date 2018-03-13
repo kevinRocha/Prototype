@@ -9,10 +9,15 @@ package Modelo;
  *
  * @author personal
  */
-public class Cell implements Cloneable {
+public class Celula implements Cloneable {
     
     private String color;
     private int vida;
+    
+    public Celula(String color, int vida) {
+        this.color = color;
+        this.vida = vida;
+    }
 
     public String getColor() {
         return color;
@@ -31,13 +36,12 @@ public class Cell implements Cloneable {
     }    
     
     @Override
-    public Cell clone(){
-        Cell clonedCell = null;
-        String[] colores = {"Red","Blue","Yellow","Black","White","Green"};
+    public Celula clone(){
+        Celula clonedCell = null;
         try{
-            clonedCell = (Cell) super.clone();
-            clonedCell.setColor(colores[(int) (Math.random() * 6)]);
-            clonedCell.setVida((int) (Math.random() * 50) + 25);
+            clonedCell = (Celula) super.clone();
+            clonedCell.setColor(color);
+            clonedCell.setVida(vida);
         } catch (CloneNotSupportedException e){
             e.printStackTrace();
         }
